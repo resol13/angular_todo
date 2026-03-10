@@ -30,6 +30,9 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: "24"      
+
+      - name: install
+        run: npm install
       - name: test
         run: npm test
   
