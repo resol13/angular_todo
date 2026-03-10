@@ -15,7 +15,7 @@ jobs:
       - name: Setup node@v6
         uses: actions/setup-node@v6
         with:
-          node-version: "24"
+          node-version: '24'
       - name: install
         run: npm install
     
@@ -29,8 +29,7 @@ jobs:
       - name: Setup node@v6
         uses: actions/setup-node@v6
         with:
-          node-version: "24"      
-
+          node-version: '24'      
       - name: install
         run: npm install
       - name: test
