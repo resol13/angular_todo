@@ -1,1 +1,25 @@
+name: npm test
+on: 
+  workflow_dispatch:
+               
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout source code
+        uses: actions/checkout@v6
+      - name: Setup node@v6
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - name: install
+        run: npm install
+    
 
+  test:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout source code
+        uses: actions/checkout@v6
+      - name: test
+        run: npm test
