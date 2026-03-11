@@ -2,6 +2,8 @@ name: Switch Node version
 on: 
   pull_request:
 
+env:
+ NODE_VERSION : 20
 jobs:
   run-npm-test:
     runs-on: ubuntu-latest
@@ -11,9 +13,10 @@ jobs:
         - name : setup node
           uses: actions/setup-node@v6
           with:
-            node-version: 'lts/*'
+            node-version: ${{ env.NODE_VERSION }}
         - name: run test
           shell: bash
           run: |
+            node -v
             npm install
             npm help
