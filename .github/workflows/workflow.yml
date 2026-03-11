@@ -1,0 +1,9 @@
+name: Call workflow
+on: 
+  workflow_dispatch:
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      node-version: 19
