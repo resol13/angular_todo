@@ -20,3 +20,4 @@ jobs:
             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ steps.short_sha.outputs.sha_short }}_."
             }' \
           --fail
+        
