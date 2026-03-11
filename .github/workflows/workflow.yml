@@ -9,7 +9,6 @@ on:
 
 jobs:
   call-reusable:
-    runs-on: self-hosted
     uses: ./.github/workflows/reusable.yml
     with:
       node-version: ${{inputs.node-version}}
