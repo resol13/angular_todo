@@ -1,9 +1,15 @@
 name: Call workflow
 on: 
   workflow_dispatch:
+   inputs:
+    node-version:        
+      required: false
+      type: string
+      default: 'lts/*'
+
 
 jobs:
   call-reusable:
     uses: ./.github/workflows/reusable.yml
     with:
-      node-version: 19
+      node-version: ${{inputs.node-version}}
