@@ -6,11 +6,14 @@ jobs:
   create-issue:
     runs-on: ubuntu-latest
     steps:
+     -  id: short_sha
+        run: |          
+          echo "sha_short=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
      - name: Create issue
        run: |
           curl --request POST \
           --url https://api.github.com/repos/resol13/angular_todo/issues \
-          --header 'authorization: Bearer ${GITHUB_SHA::7}' \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN}}' \
           --header 'content-type: application/json' \
           --data '{
             "title": "Automated issue for commit: ${{ steps.short_sha.outputs.sha_short }}",
