@@ -1,0 +1,10 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - angular-cli-ghpages > gh-pages > async > lodash:
+        patched: '2026-03-11T14:11:21.355Z'
+        id: SNYK-JS-LODASH-567746
+        path: angular-cli-ghpages > gh-pages > async > lodash
