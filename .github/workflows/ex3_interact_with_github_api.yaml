@@ -13,7 +13,7 @@ jobs:
        run: |
           curl --request POST \
           --url https://api.github.com/repos/resol13/angular_todo/issues \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN}}' \
+          --header 'authorization: Bearer ${{ secrets.API_GITHUB_TOKEN}}' \
           --header 'content-type: application/json' \
           --data '{
             "title": "Automated issue for commit: ${{ steps.short_sha.outputs.sha_short }}",
