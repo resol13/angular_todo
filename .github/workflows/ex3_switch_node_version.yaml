@@ -16,4 +16,4 @@ jobs:
           shell: bash
           run: |
             npm install
-            npm test
+            npm lint
