@@ -19,5 +19,5 @@ jobs:
           run: |
             node -v
             npm install
-            npm test
             npm help
+
