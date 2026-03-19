@@ -1,0 +1,23 @@
+name: interact with Github API
+on: 
+  pull_request:
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+     -  id: short_sha
+        run: |          
+          echo "sha_short=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+     - name: Create issue
+       run: |
+          curl --request POST \
+          --url https://api.github.com/repos/resol13/angular_todo/issues \
+          --header 'authorization: Bearer ${{ secrets.API_GITHUB_TOKEN}}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "title": "Automated issue for commit: ${{ steps.short_sha.outputs.sha_short }}",
+            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ steps.short_sha.outputs.sha_short }}_."
+            }' \
+          --fail
+        
